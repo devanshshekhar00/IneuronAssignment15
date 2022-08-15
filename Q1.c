@@ -31,5 +31,5 @@ int greatest(int n[],int size)
         }
     }
     
-    return n[size -1];
+    return n[0];
 }
