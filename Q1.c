@@ -1,37 +1,35 @@
 #include <stdio.h>
-int greatestElement(int [],int);
-int main() {
-    int length;
-    printf("Enter array length\t");
-    scanf("%d",&length);
-    int n[length];
-    printf("Enter elements\n");
-    for(int i = 0; i < length;i++)
-    {
-        printf("Enter element\t");
-        scanf("%d",&n[i]);
-       
-    }
-    int k = greatestElement(n,length);
-    printf("Greatest element %d",k);
-    
+int greatest(int n[],int size);
+int main()
+{
+   int size;
+   printf("Enter size\n");
+   scanf("%d",&size);
+   int n[size];
+   for(int i = 0; i < size; i ++)
+   {
+       printf("Enter element %d\t",i);
+       scanf("%d",&n[i]);
+   }
+   int greatestElement = greatest(n,size);
+   printf("Greatest element is %d",greatestElement);
 
     return 0;
 }
-int greatestElement(int n [],int k)
+int greatest(int n[],int size)
 {
-    for(int i = 0; i < k-1;i++)
+    for(int i = 0; i < size-1;i++)
     {
-        for(int j = 0; j < k-1 ; j++)
+        for(int j = 0; j < size-1;j++)
         {
             if(n[j] > n[j+1])
             {
-                int q = n[j];
+                int k = n[j];
                 n[j] = n[j+1];
-                n[j+1] = q;
+                n[j+1] = k;
             }
         }
     }
     
-    return n[k-1];
+    return n[size -1];
 }
