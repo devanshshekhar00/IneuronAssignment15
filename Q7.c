@@ -14,7 +14,7 @@ int main()
        scanf("%d",&n[i]);
    }
    int g = duplicates(n,size);
-   printf("no. od duplicates are %d",g);
+   printf("no. of duplicates are %d",g);
    
 
     return 0;
